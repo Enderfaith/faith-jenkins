@@ -4,10 +4,7 @@ package com.jenkins.test.faithjenkins;/**
  */
 
 import com.jenkins.test.faithjenkins.utils.IpUtils;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -22,9 +19,9 @@ import javax.servlet.http.HttpServletRequest;
 @RequestMapping("/faithJenkins")
 public class HelloController {
 
-    @PostMapping("/test")
+    @GetMapping("/test")
     public String faithJenkins(HttpServletRequest request){
         String ipAddr = IpUtils.getIpAddr(request);
-        return "hi, 来自"+ ipAddr +"的用户,welcome,this is faith repo";
+        return "hi, 来自"+ ipAddr +"的用户,welcome,this is test faith-jenkins";
     }
 }
