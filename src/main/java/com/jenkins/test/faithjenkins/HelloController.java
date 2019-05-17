@@ -22,6 +22,7 @@ public class HelloController {
     @GetMapping("/test")
     public String faithJenkins(HttpServletRequest request){
         String ipAddr = IpUtils.getIpAddr(request);
+        System.out.println("当前 ip "+ipAddr);
         return "hi, 来自"+ ipAddr +"的用户,welcome,this is test faith-jenkins";
     }
 }
